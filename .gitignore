@@ -24,6 +24,6 @@ _ReSharper*/
 App_Data/
 
 #npm ecosystem
-*/node_modules
+*/*/node_modules
 
 *.kra*
