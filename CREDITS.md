@@ -5,3 +5,7 @@ This project is written in C#, using Visual Studio Community edition. Its made p
 ## Icon Fonts
 
 [Lineicons](https://lineicons.com/) and [open iconic](https://useiconic.com/open)
+
+## Art
+
+Open Book Icon/Image by [smalllikeart](https://www.flaticon.com/authors/smalllikeart) from flaticon.com
