@@ -1,6 +1,53 @@
 ﻿@page "/Blog/{BlogPostID}"
 
-<h3>@BlogPostID</h3>
+<div class="flex justify-between container mx-auto">
+    <!--Blog Content-->
+    <div class="w-full lg:w-8/12">
+        <section class="text-gray-600 body-font pt-4">
+            <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Kickstarter Actually Pinterest Brunch Bitters Occupy</h2>
+            <span class="font-semibold title-font text-gray-700">Appels</span>
+            <hr class="pb-6" />
+            <div class="md:w-3/5">
+                <p class="text-base">Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.</p>
+            </div>
+        </section>
+    </div>
+    <!--Left Side Bar-->
+    <div class="-mx-8 w-4/12 hidden lg:block">
+        <div class="mt-10 px-8">
+            <h1 class="mb-4 text-xl font-bold text-gray-700">Categories</h1>
+            <div class="flex flex-col bg-white px-4 py-6 max-w-sm mx-auto rounded-lg shadow-md">
+                <ul>
+                    <li>
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Appels
+                        </NavLink>
+                    </li>
+                    <li class="mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Pears
+                        </NavLink>
+                    </li>
+                    <li class="mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Bananas
+                        </NavLink>
+                    </li>
+                    <li class="mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Bowls
+                        </NavLink>
+                    </li>
+                    <li class="flex items-center mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Tea
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
     [Parameter]

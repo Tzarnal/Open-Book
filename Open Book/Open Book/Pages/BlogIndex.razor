@@ -1,5 +1,108 @@
 ﻿@page "/Blog"
 
-<h1>Blog</h1>
+<div class="flex justify-between container mx-auto">
+    <div class="w-full lg:w-8/12">
+        <!--Latest Post-->
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap">
+                <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Kickstarter Actually Pinterest Brunch Bitters Occupy</h2>
+                <div class="md:w-3/5 md:pl-6">
+                    <p class="leading-relaxed text-base">Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.</p>
+                    <span class="font-semibold title-font text-gray-700">Appels</span>
+                    <div class="flex md:mt-4 mt-6">
+                        <NavLink href="Blog/Kickstarter">
+                            <h2 class="text-2xl font-medium text-blue-400 title-font mb-2">Read</h2>
+                        </NavLink>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-Welcome to your new app.
+        <!--Last X Posts-->
+        <section class="text-gray-600 body-font overflow-hidden">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="-my-8 divide-y-2 divide-gray-100">
+                    <div class="py-8 flex flex-wrap md:flex-nowrap">
+                        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                            <span class="font-semibold title-font text-gray-700">Tea</span>
+                        </div>
+                        <div class="md:flex-grow">
+                            <NavLink href="Blog/Bitters">
+                                <h2 class="text-2xl font-medium text-blue-400 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
+                            </NavLink>
+                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
+                        </div>
+                    </div>
+                    <div class="py-8 flex flex-wrap md:flex-nowrap">
+                        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                            <span class="font-semibold title-font text-gray-700">Bananas</span>
+                        </div>
+                        <div class="md:flex-grow">
+                            <NavLink href="Blog/Meditation">
+                                <h2 class="text-2xl font-medium text-blue-400 title-font mb-2">Meditation bushwick direct trade taxidermy shaman</h2>
+                            </NavLink>
+                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
+                        </div>
+                    </div>
+                    <div class="py-8 flex flex-wrap md:flex-nowrap">
+                        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                            <span class="font-semibold title-font text-gray-700">Appels</span>
+                        </div>
+                        <div class="md:flex-grow">
+                            <NavLink href="Blog/Woke">
+                                <h2 class="text-2xl font-medium text-blue-400 title-font mb-2">Woke master cleanse drinking vinegar salvia</h2>
+                            </NavLink>
+                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
+                        </div>
+                    </div>
+                    <div class="py-8 flex flex-wrap md:flex-nowrap">
+                        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                            <span class="font-semibold title-font text-gray-700">Bowls</span>
+                        </div>
+                        <div class="md:flex-grow">
+                            <NavLink href="Blog/Woke">
+                                <h2 class="text-2xl font-medium text-blue-400 title-font mb-2">Woke master cleanse drinking vinegar salvia</h2>
+                            </NavLink>
+                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--Left Side Bar-->
+    <div class="-mx-8 w-4/12 hidden lg:block">
+        <div class="mt-10 px-8">
+            <h1 class="mb-4 text-xl font-bold text-gray-700">Categories</h1>
+            <div class="flex flex-col bg-white px-4 py-6 max-w-sm mx-auto rounded-lg shadow-md">
+                <ul>
+                    <li>
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Appels
+                        </NavLink>
+                    </li>
+                    <li class="mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Pears
+                        </NavLink>
+                    </li>
+                    <li class="mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Bananas
+                        </NavLink>
+                    </li>
+                    <li class="mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Bowls
+                        </NavLink>
+                    </li>
+                    <li class="flex items-center mt-2">
+                        <NavLink href="#" class="text-gray-700 font-bold mx-1 hover:text-gray-600 hover:underline">
+                            - Tea
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

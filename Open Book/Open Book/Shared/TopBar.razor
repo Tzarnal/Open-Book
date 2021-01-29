@@ -23,8 +23,7 @@
         <!-- to bar right  -->
         <li id="MenuDropdownButton" class="hover:bg-blue-100 hover:border-b-2">
             <a @onclick="ToggleOptionsMenuDropdown"
-               class="h-16 px-6 flex flex justify-center items-center w-full
-                    focus:text-orange-500">
+               class="h-16 px-6 flex flex justify-center items-center w-full">
                 <svg class="h-5 w-5"
                      xmlns="http://www.w3.org/2000/svg"
                      width="24"
@@ -54,7 +53,7 @@
                 </svg>
             </a>
             <!-- Dropdown Body -->
-            <div hidden="@HideOptionsMenuDropdown" @onmouseenter="OptionMenuMouseIn" @onmouseleave="OptionMenuMouseOut" class="border-2 absolute right-0 w-40 mt-2 py-2 bg-white border shadow-xl">
+            <div hidden="@HideOptionsMenuDropdown" @onmouseenter="OptionMenuMouseIn" @onmouseleave="OptionMenuMouseOut" class="border-2 absolute right-0 w-40 mt-2 py-2 bg-white border rounded-lg shadow-md">
                 <TopBarOptionsMenu />
             </div>
         </li>
