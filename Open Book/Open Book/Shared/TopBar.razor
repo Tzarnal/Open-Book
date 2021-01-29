@@ -1,4 +1,6 @@
-﻿<nav class="px-4 flex justify-between bg-white h-16 border-b-2">
+﻿@inject IJSRuntime js
+
+<nav class="px-4 flex justify-between bg-white h-16 border-b-2">
     <!-- top bar -->
 
     <ul class="flex items-center lg:hidden">
@@ -19,8 +21,8 @@
 
     <ul class="flex items-center">
         <!-- to bar right  -->
-        <li class="hover:bg-gray-100 hover:border-b-2">
-            <a href="."
+        <li id="MenuDropdownButton" class="hover:bg-blue-100 hover:border-b-2">
+            <a @onclick="ToggleOptionsMenuDropdown"
                class="h-16 px-6 flex flex justify-center items-center w-full
                     focus:text-orange-500">
                 <svg class="h-5 w-5"
@@ -51,6 +53,35 @@
                             1.65 0 0 0-1.51 1z"></path>
                 </svg>
             </a>
+            <!-- Dropdown Body -->
+            <div hidden="@HideOptionsMenuDropdown" @onmouseenter="OptionMenuMouseIn" @onmouseleave="OptionMenuMouseOut" class="border-2 absolute right-0 w-40 mt-2 py-2 bg-white border shadow-xl">
+                <TopBarOptionsMenu />
+            </div>
         </li>
     </ul>
 </nav>
+
+@code{
+    private bool HideOptionsMenuDropdown { get; set; } = true;
+    private bool MouseIsInMenu { get; set; } = false;
+
+    private async void ToggleOptionsMenuDropdown()
+    {
+        HideOptionsMenuDropdown = !HideOptionsMenuDropdown;
+    }
+
+    void OptionMenuMouseIn()
+    {
+        MouseIsInMenu = true;
+    }
+
+    void OptionMenuMouseOut()
+    {
+        if (MouseIsInMenu)
+        {
+            HideOptionsMenuDropdown = true;
+        }
+
+        MouseIsInMenu = false;
+    }
+}

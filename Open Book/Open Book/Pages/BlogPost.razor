@@ -1,0 +1,8 @@
+﻿@page "/Blog/{BlogPostID}"
+
+<h3>@BlogPostID</h3>
+
+@code {
+    [Parameter]
+    public string BlogPostID { get; set; }
+}
