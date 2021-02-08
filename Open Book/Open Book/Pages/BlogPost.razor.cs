@@ -25,8 +25,8 @@ namespace Open_Book.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            await ReadPostContentAsync(@"blog/TestPost.md");
-            await ReadPostFrontMatterAsync(@"blog/TestPost.md");
+            await ReadPostContentAsync("blog/TestPost.md");
+            await ReadPostFrontMatterAsync("blog/TestPost.md");
         }
 
         private async Task ReadPostContentAsync(string filePath)
@@ -39,9 +39,7 @@ namespace Open_Book.Pages
                 .UseEmojiAndSmiley()
                 .Build();
 
-            var markDig = Markdown.ToHtml(markdown, markDigPipeline);
-
-            BlogPostContent = markDig;
+            BlogPostContent = Markdown.ToHtml(markdown, markDigPipeline);
         }
 
         private async Task ReadPostFrontMatterAsync(string filePath)
