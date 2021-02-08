@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MarkdownIndexer": {
+      "commandName": "Project",
+      "commandLineArgs": "\"D:\\Open Book\\Open-Book\\Open Book\\Open Book\\wwwroot\\blog\""
+    }
+  }
+}
