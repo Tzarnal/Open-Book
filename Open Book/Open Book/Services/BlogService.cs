@@ -13,6 +13,8 @@ namespace Open_Book.Services
     {
         public List<MDPost> BlogPosts { get; set; }
 
+        public List<string> BlogCategories { get => BlogPosts.Select(p => p.Category).Distinct().ToList(); }
+
         private string _blogIndexFile = @"blog/MdPosts.json";
 
         public BlogService()

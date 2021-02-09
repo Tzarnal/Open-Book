@@ -1,15 +1,22 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
-using Markdig;
 using System.Net.Http;
 using System.Collections.Generic;
+using Markdig;
+using System.Linq;
+using Open_Book.Services;
+using Open_Book.Data;
+using System;
 
 namespace Open_Book.Pages
 {
     public partial class BlogPost
     {
         [Inject]
-        protected HttpClient Http { get; set; }
+        private HttpClient Http { get; set; }
+
+        [Inject]
+        private IBlogService BlogService { get; set; }
 
         [Parameter]
         public string BlogPostID { get; set; }
@@ -25,8 +32,21 @@ namespace Open_Book.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            await ReadPostContentAsync("blog/TestPost.md");
-            await ReadPostFrontMatterAsync("blog/TestPost.md");
+            var blogPost = BlogService.BlogPosts.Where(p => p.Url == BlogPostID).FirstOrDefault();
+
+            Console.WriteLine(BlogPostID);
+            Console.WriteLine(blogPost == null);
+
+            Console.WriteLine(BlogService.BlogPosts[0].Url);
+
+            if (blogPost == null)
+            {
+                blogPost = new MDPost();
+                blogPost.File = "blog/TestPost.md";
+            }
+
+            await ReadPostContentAsync(blogPost.File);
+            await ReadPostFrontMatterAsync(blogPost.File);
         }
 
         private async Task ReadPostContentAsync(string filePath)

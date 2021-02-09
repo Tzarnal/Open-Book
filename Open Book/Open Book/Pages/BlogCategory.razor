@@ -1,31 +1,12 @@
-﻿@page "/Blog"
+﻿@page "/Blog-Category/{Category}"
 
 <div class="flex justify-between container mx-auto">
     <div class="w-full lg:w-8/12">
-        <!--Latest Post-->
-        <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto flex flex-wrap">
-                <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">@BlogService.BlogPosts.Last().Title</h2>
-                <div class="md:w-3/5 md:pl-6">
-                    <p class="leading-relaxed text-base">@BlogService.BlogPosts.Last().Lede</p>
-                    <span class="font-semibold title-font text-gray-700">@BlogService.BlogPosts.Last().Category</span>
-                    <div class="flex md:mt-4 mt-6">
-                        @{
-                            var firstPostLink = $"Blog/{BlogService.BlogPosts.Last().Url}";
-                        }
-                        <NavLink href="@firstPostLink">
-                            <h2 class="text-2xl font-medium text-blue-400 title-font mb-2">Read</h2>
-                        </NavLink>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--Last X Posts-->
         <section class="text-gray-600 body-font overflow-hidden">
             <div class="container px-5 py-24 mx-auto">
                 <div class="-my-8 divide-y-2 divide-gray-100">
-                    @foreach (var post in BlogService.BlogPosts.Take(5))
+                    @foreach (var post in BlogService.BlogPosts.Where(p => p.Category == Category).Take(5))
                     {
                         var postLink = $"Blog/{post.Url}";
                         <div class="py-8 flex flex-wrap md:flex-nowrap">

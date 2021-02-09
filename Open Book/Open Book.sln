@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Open Book", "Open Book\Open Book.csproj", "{6D68B7E5-536F-4C91-98AE-A758C04DE84F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownIndexer", "MarkdownIndexer\MarkdownIndexer.csproj", "{50F02CF1-4652-4FAF-9BFC-E3628816925C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdownIndexer", "MarkdownIndexer\MarkdownIndexer.csproj", "{50F02CF1-4652-4FAF-9BFC-E3628816925C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
