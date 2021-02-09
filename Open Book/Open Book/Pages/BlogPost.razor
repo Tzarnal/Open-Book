@@ -6,10 +6,10 @@
         <section class="text-gray-600 body-font pt-4">
             <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">@BlogPostTitle</h2>
             <span class="font-semibold title-font text-gray-700">@BlogPostCategory</span>
-            <hr class="pb-6" />
-            <div id="BlogPost" class="md:w-4/5">
+            <hr class="pb-6 mt-2" />
+            <article id="BlogPost" class="prose md:prose-xl">
                 @((MarkupString)BlogPostContent)
-            </div>
+            </article>
         </section>
     </div>
     <!--Left Side Bar-->

@@ -10,7 +10,8 @@
             display: ['group-hover'],
         }
     },
-    plugins: [        
+    plugins: [
         require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
     ],
 }
