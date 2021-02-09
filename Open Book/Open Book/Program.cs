@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using BlazorFluentUI;
+using Open_Book.Services;
 
 namespace Open_Book
 {
@@ -18,8 +19,13 @@ namespace Open_Book
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            var httpClient = new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) };
+            builder.Services.AddScoped(sp => httpClient);
             builder.Services.AddBlazorFluentUI();
+
+            var blogService = new BlogService();
+            await blogService.Initialize(httpClient);
+            builder.Services.AddSingleton<IBlogService>(blogService);
 
             await builder.Build().RunAsync();
         }
