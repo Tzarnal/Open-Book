@@ -135,16 +135,33 @@ namespace MarkdownIndexer
                 mdPost.Url = url;
             }
 
+            if (frontMatter.ContainsKey("lede"))
+            {
+                mdPost.Lede = frontMatter["lede"];
+            }
+            else
+            {
+                mdPost.Lede = GetLede(filePath);
+            }
+
             return mdPost;
         }
 
         private static string FileName(string filePath)
         {
-            Console.WriteLine(filePath);
-
             var fileNameMatch = Regex.Match(filePath, @"(blog\\.+)");
 
             return fileNameMatch.Value.Replace('\\', '/');
+        }
+
+        private static string GetLede(string filePath)
+        {
+            var markdownFileText = File.ReadAllText(filePath);
+
+            markdownFileText = Regex.Replace(markdownFileText, @"---[\W\w]+---\W", "");
+            var markdownParagraphs = markdownFileText.Split(Environment.NewLine);
+
+            return markdownParagraphs[0];
         }
 
         private static string ToHexString(byte[] bytes, bool upperCase = true)

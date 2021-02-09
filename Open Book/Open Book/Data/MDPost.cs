@@ -9,6 +9,7 @@ namespace Open_Book.Data
     {
         public string Title { get; set; }
         public string Category { get; set; }
+        public string Lede { get; set; }
 
         public string File { get; set; }
 
