@@ -27,7 +27,12 @@ namespace MarkdownIndexer
 
             foreach (var file in files)
             {
-                mdPosts.Add(ReadMDFile(file));
+                var mdFile = ReadMDFile(file);
+
+                if (mdFile.Category != "404")
+                {
+                    ReadMDFile(file);
+                }
             }
 
             var options = new JsonSerializerOptions

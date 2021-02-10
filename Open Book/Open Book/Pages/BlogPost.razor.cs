@@ -64,7 +64,7 @@ namespace Open_Book.Pages
 
         private async Task ReadPostFrontMatterAsync(string filePath)
         {
-            BlogPostTitle = "Missing Blog Post Title";
+            BlogPostTitle = "This Blog Post Could Not Be Found";
 
             var markdownFile = await Http.GetStringAsync(filePath);
             var markdownFileLines = markdownFile.Split("\r\n");
