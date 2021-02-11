@@ -34,15 +34,10 @@ namespace Open_Book.Pages
         {
             var blogPost = BlogService.BlogPosts.Where(p => p.Url == BlogPostID).FirstOrDefault();
 
-            Console.WriteLine(BlogPostID);
-            Console.WriteLine(blogPost == null);
-
-            Console.WriteLine(BlogService.BlogPosts[0].Url);
-
             if (blogPost == null)
             {
                 blogPost = new MDPost();
-                blogPost.File = "blog/TestPost.md";
+                blogPost.File = "blog/404Post.md";
             }
 
             await ReadPostContentAsync(blogPost.File);
@@ -64,9 +59,23 @@ namespace Open_Book.Pages
 
         private async Task ReadPostFrontMatterAsync(string filePath)
         {
-            BlogPostTitle = "This Blog Post Could Not Be Found";
+            var markdownFile = string.Empty;
+            try
+            {
+                markdownFile = await Http.GetStringAsync(filePath);
+            }
+            catch
+            {
+                BlogPostTitle = "404, Post Not Found";
+                BlogPostCategory = "404";
+            }
 
-            var markdownFile = await Http.GetStringAsync(filePath);
+            if (string.IsNullOrWhiteSpace(markdownFile))
+            {
+                await ReadPostFrontMatterAsync("blog/404Post.md");
+                return;
+            }
+
             var markdownFileLines = markdownFile.Split("\r\n");
 
             if (markdownFileLines[0] != "---")

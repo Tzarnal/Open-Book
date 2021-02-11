@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Open Book blog
+title: Welcome to My Blog
 category: General
 lede: Welcome to My New Blog. Where I'll review books, literature and ramble about my life.
 id: MQ0001
