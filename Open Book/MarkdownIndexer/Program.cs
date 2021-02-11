@@ -31,7 +31,7 @@ namespace MarkdownIndexer
 
                 if (mdFile.Category != "404")
                 {
-                    ReadMDFile(file);
+                    mdPosts.Add(mdFile);
                 }
             }
 
