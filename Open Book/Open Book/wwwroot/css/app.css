@@ -1,1 +1,5 @@
-﻿
+﻿.active {
+    border-color: rgba(59, 130, 246, 0.5);
+    border-right-width: 2px;
+
+}

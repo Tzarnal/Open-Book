@@ -1,21 +1,38 @@
-﻿<aside class="hidden lg:flex flex-col items-center bg-white text-gray-700 shadow h-full">
+﻿<aside class="visible flex flex-col items-center bg-white text-gray-700 shadow h-full">
     <!-- Side Nav Bar-->
 
-    <div class="h-16 flex items-center w-full">
+    <div class="h-16 flex items-center w-full justify-self-start">
         <!-- Logo Section -->
-        <NavLink class="h-6 w-6 mx-auto" href="" Match="NavLinkMatch.All">
-            <img class="h-6 w-6 mx-auto"
+        <a class="h-6 w-6 ml-6" href="">
+            <img class="h-6 w-6 "
                  src="images/icon/icon-512.png"
                  alt="Open Book Logo" />
-        </NavLink>
+        </a>
     </div>
 
-    <ul>
+    <ul class="">
         <!-- Items Section -->
         <li class="hover:bg-blue-100">
-            <NavLink href="blog" class ="h-16 px-6 flex flex justify-center items-center w-full
-                    focus:text-orange-500">
-                <svg class="h-5 w-5" 
+            <NavLink href="" Match="NavLinkMatch.All" class="h-16 px-6 flex flex justify-center items-center w-full md:grid grid-cols-2">
+                <svg class="h-5 w-5 justify-self-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+                     aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Property</title>
+                    <desc>A line styled icon from Orion Icon Library.</desc>
+                    <path data-name="layer2"
+                          fill="none" stroke="#202020" stroke-linecap="round" stroke-miterlimit="10"
+                          stroke-width="2" d="M54 22.6V8h-9v7.445M40 62h14V29.769M10 30v32h14" stroke-linejoin="round"></path>
+                    <circle data-name="layer2" cx="32" cy="29" r="5" fill="none" stroke="#202020"
+                            stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke-linejoin="round"></circle>
+                    <path data-name="layer1" fill="none" stroke="#202020" stroke-linecap="round"
+                          stroke-miterlimit="10" stroke-width="2" d="M24 42h16v20H24zm8-37L2.436 28.651a.5.5 0 0 0-.036.749l3.287 3.287a.5.5 0 0 0 .668.035L32 12l25.65 20.718a.5.5 0 0 0 .668-.035l3.287-3.283a.5.5 0 0 0-.041-.744z"
+                          stroke-linejoin="round"></path>
+                </svg>
+                <span class="hidden md:block text-2xl justify-self-end">Home</span>
+            </NavLink>
+        </li>
+        <li class="hover:bg-blue-100">
+            <NavLink href="blog" class="h-16 px-6 flex flex justify-center items-center w-full md:grid grid-cols-2">
+                <svg class="h-5 w-5 justify-self-start"
                      viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>Feather</title>
                     <desc>A line styled icon from Orion Icon Library.</desc>
@@ -26,8 +43,9 @@
                           fill="none" d="M42.1 21.9V8.169c-10.828 5.992-23.594 17.8-31.528 41.086l2.087 2.086 2.087 2.088C61.553 37.478 62 2 62 2a41.974 41.974 0 0 0-13.147 3.014l-6.634 16.767"
                           data-name="layer1" stroke-linejoin="round" stroke-linecap="round"></path>
                 </svg>
+                <span class="hidden md:block text-2xl justify-self-end">Blog</span>
             </NavLink>
-        </li>       
+        </li>
     </ul>
 
     <div class="mt-auto h-16 flex items-center w-full">
