@@ -22,6 +22,20 @@ namespace Open_Book.Services
             BlogPosts = new();
         }
 
+        public IEnumerable<MDPost> GetBlogPosts()
+        {
+            return BlogPosts;
+        }
+
+        public IEnumerable<MDPost> GetBlogPosts(List<string> availablePostIds)
+        {
+            var posts = BlogPosts.Where(p => availablePostIds.Contains(p.Id));
+            foreach (var p in posts)
+            {
+                yield return p;
+            }
+        }
+
         public async Task Initialize(HttpClient Http)
         {
             await ReadIndexFile(_blogIndexFile, Http);
