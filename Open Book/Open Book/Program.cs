@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using BlazorFluentUI;
 using Open_Book.Services;
@@ -26,6 +22,12 @@ namespace Open_Book
             var blogService = new BlogService();
             await blogService.Initialize(httpClient);
             builder.Services.AddSingleton<BlogService>(blogService);
+
+            var gameStateService = new GameStateService();
+            builder.Services.AddSingleton<GameStateService>(gameStateService);
+
+            var appSettingService = new AppSettingService();
+            builder.Services.AddSingleton<AppSettingService>(appSettingService);
 
             await builder.Build().RunAsync();
         }
