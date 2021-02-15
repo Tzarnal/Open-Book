@@ -9,7 +9,7 @@ using Open_Book.Data;
 
 namespace Open_Book.Services
 {
-    public class BlogService : IBlogService
+    public class BlogService
     {
         public List<MDPost> BlogPosts { get; set; }
 

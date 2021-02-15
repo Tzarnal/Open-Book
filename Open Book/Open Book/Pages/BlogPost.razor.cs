@@ -16,7 +16,7 @@ namespace Open_Book.Pages
         private HttpClient Http { get; set; }
 
         [Inject]
-        private IBlogService BlogService { get; set; }
+        private BlogService BlogService { get; set; }
 
         [Parameter]
         public string BlogPostID { get; set; }

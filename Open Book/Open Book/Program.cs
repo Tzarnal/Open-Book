@@ -25,7 +25,7 @@ namespace Open_Book
 
             var blogService = new BlogService();
             await blogService.Initialize(httpClient);
-            builder.Services.AddSingleton<IBlogService>(blogService);
+            builder.Services.AddSingleton<BlogService>(blogService);
 
             await builder.Build().RunAsync();
         }

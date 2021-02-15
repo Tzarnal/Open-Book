@@ -13,6 +13,6 @@ namespace Open_Book.Pages
     public partial class BlogIndex
     {
         [Inject]
-        private IBlogService BlogService { get; set; }
+        private BlogService BlogService { get; set; }
     }
 }

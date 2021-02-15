@@ -16,6 +16,6 @@ namespace Open_Book.Pages
         public String Category { get; set; }
 
         [Inject]
-        private IBlogService BlogService { get; set; }
+        private BlogService BlogService { get; set; }
     }
 }
