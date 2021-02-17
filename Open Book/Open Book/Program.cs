@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using BlazorFluentUI;
 using Open_Book.Services;
+using Blazored.LocalStorage;
+using Blazored.SessionStorage;
 
 namespace Open_Book
 {
@@ -19,6 +21,11 @@ namespace Open_Book
             builder.Services.AddScoped(_ => httpClient);
             builder.Services.AddBlazorFluentUI();
 
+            //Library Services
+            builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddBlazoredSessionStorage();
+
+            //Open Book services
             var blogService = new BlogService();
             await blogService.Initialize(httpClient);
             builder.Services.AddSingleton<BlogService>(blogService);
