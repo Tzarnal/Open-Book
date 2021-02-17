@@ -16,7 +16,7 @@ namespace Open_Book
             builder.RootComponents.Add<App>("app");
 
             var httpClient = new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) };
-            builder.Services.AddScoped(sp => httpClient);
+            builder.Services.AddScoped(_ => httpClient);
             builder.Services.AddBlazorFluentUI();
 
             var blogService = new BlogService();
